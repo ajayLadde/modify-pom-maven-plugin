@@ -1,0 +1,26 @@
+
+
+ ## generic files to ignore
+
+*~
+**/*~
+*.lock
+**/*.lock
+*.DS_Store
+**/*.DS_Store
+
+
+## Maven
+
+/target/
+**/target/**
+
+## Eclipse
+
+.settings
+**/.settings
+*.project
+**/*.project
+
+*.classpath
+**/*.classpath
