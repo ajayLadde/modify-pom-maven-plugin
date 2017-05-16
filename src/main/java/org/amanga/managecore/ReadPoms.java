@@ -195,7 +195,7 @@ public class ReadPoms {
 			for (int i = 0; i < numberChildren; i++) {
 
 				String propertyVersion = children.item(i).getTextContent();
-				if (ReadPoms.isCommentedTag(document, propertyVersion)) {
+				if (ReadPoms.isCommentedTag(document, children.item(i).getNodeName())) {
 					continue;
 				}
 				if (propertyVersion.contains(SNAPSHOT)) {
