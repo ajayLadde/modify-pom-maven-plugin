@@ -11,7 +11,7 @@
 		<plugins>
 			<plugin>
 				<groupId>org.amanga.manage</groupId>
-				<artifactId>maven-manage-pom-plugin</artifactId>
+				<artifactId>manage-pom-maven-plugin</artifactId>
 				<configuration>
 				</configuration>
 			</plugin>

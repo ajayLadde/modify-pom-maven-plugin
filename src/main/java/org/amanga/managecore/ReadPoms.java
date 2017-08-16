@@ -40,12 +40,16 @@ public class ReadPoms {
 	 * read poms and return an expection if a SNAPSHOT dependency exist
 	 * 
 	 * @param directory
+	 *            of your project
 	 * @param typology:
 	 *            all, parent or dependencies
 	 * @return null if there aren't SNAPSHOTS
 	 * @throws ParserConfigurationException
+	 *             if pom.xml is not parsed
 	 * @throws SAXException
+	 *             for pom.xml
 	 * @throws IOException
+	 *             for pom.xml
 	 */
 	public static String checkSnapshots(String directory, String typology)
 			throws ParserConfigurationException, SAXException, IOException {
@@ -95,6 +99,7 @@ public class ReadPoms {
 	 * read parent pom version and return true if a SNAPSHOT dependency exists
 	 * 
 	 * @param document
+	 *            of your pom.xml
 	 * @return
 	 * 
 	 */
@@ -129,6 +134,7 @@ public class ReadPoms {
 	 * check maven submodules
 	 * 
 	 * @param document
+	 *            of your pom.xml
 	 * @return
 	 * 
 	 */
@@ -141,8 +147,8 @@ public class ReadPoms {
 
 		for (int i = 0; i < exist; i++) {
 			Node node = document.getElementsByTagName(MODULE).item(i);
-			if(MODULES.equals(node.getParentNode())){
-			result.add(node.getTextContent());
+			if (MODULES.equals(node.getParentNode())) {
+				result.add(node.getTextContent());
 			}
 		}
 
@@ -154,6 +160,7 @@ public class ReadPoms {
 	 * check snapshot versions
 	 * 
 	 * @param document
+	 *            of your pom.xml
 	 * @return
 	 * 
 	 */
@@ -178,6 +185,7 @@ public class ReadPoms {
 	 * check snapshot versions on properties
 	 * 
 	 * @param document
+	 *            of your pom.xml
 	 * @return
 	 * 
 	 */
@@ -214,11 +222,16 @@ public class ReadPoms {
 	 * check snapshot versions on child poms
 	 * 
 	 * @param directory
+	 *            of your project
 	 * @param modules
+	 *            of your project
 	 * @param documentBuilder
+	 *            to read your pom.xml
 	 * @return null if there aren't SNAPSHOTS
 	 * @throws IOException
+	 *             if pom.xml is not read
 	 * @throws SAXException
+	 *             if pom.xml is not read
 	 * 
 	 */
 	private static String checkChildSnapshotVersions(String directory, List<String> modules,
@@ -253,10 +266,15 @@ public class ReadPoms {
 	 * check properties commented in pom.xml
 	 * 
 	 * @param document
+	 *            of your pom.xml
 	 * @param tagName
+	 *            of your pom.xml
 	 * @throws ParserConfigurationException
+	 *             if pom.xml is not parsed
 	 * @throws SAXException
+	 *             for pom.xml
 	 * @throws IOException
+	 *             for pom.xml
 	 */
 	private static boolean isCommentedTag(org.w3c.dom.Document document, String tagName) {
 

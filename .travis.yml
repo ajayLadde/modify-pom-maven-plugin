@@ -1,0 +1,16 @@
+sudo: false
+language: java
+services:
+- docker
+cache:
+  directories:
+  - "$HOME/.cache"
+env:
+  global:
+  - MAVEN_HOME=/usr/local/maven-3.3.9
+
+deploy:
+  provider: script
+  script: "mvn deploy"
+  skip_cleanup: true
+  tags: true

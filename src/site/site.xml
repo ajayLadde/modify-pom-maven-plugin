@@ -1,0 +1,49 @@
+<project name=" Maven Manage Pom Plugin">
+  <bannerLeft>
+    <name>${project.name}</name>
+  </bannerLeft>
+  <bannerRight>
+    <src></src>
+  </bannerRight>
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.5</version>
+  </skin>
+  <custom>
+    <fluidoSkin>
+      <topBarEnabled>true</topBarEnabled>
+      <sideBarEnabled>true</sideBarEnabled>
+      <googleSearch>
+        <sitesearch/>
+      </googleSearch>
+      <gitHub>
+        <projectId>amanganiello90/manage-pom-maven-plugin</projectId>
+        <ribbonOrientation>right</ribbonOrientation>
+        <ribbonColor>orange</ribbonColor>
+      </gitHub>
+      <breadcrumbDivider>»</breadcrumbDivider>
+    </fluidoSkin>
+  </custom>
+
+  <body>
+    <menu name="Overview">
+      <item name="Introduction" href="index.html"/>
+      <item name="Usage" href="usage.html"/>
+      <item name="Goals" href="plugin-info.html"/>
+      <item name="Examples" href="examples.html"/>
+      <item name="Changelog" href="changelog.html"/>
+    </menu>
+    <menu ref="reports" />
+
+<!--
+ <menu name="Summary" >
+
+    	<item name="Dependencies" href="dependencies.html" />
+    	<item name="Source" href="source-repository.html" />
+</menu>
+-->
+
+
+  </body>
+</project>

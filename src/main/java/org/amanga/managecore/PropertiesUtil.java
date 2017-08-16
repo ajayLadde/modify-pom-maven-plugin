@@ -50,7 +50,11 @@ public class PropertiesUtil {
 	 * method to get properties from a file
 	 * 
 	 * @param propertiesFilePath
+	 *            of your path property file
 	 * @throws Exception
+	 *             for any problems
+	 * 
+	 * @return Properties object
 	 */
 	public static Properties getPropertiesFile(String propertiesFilePath) throws Exception {
 
@@ -83,8 +87,11 @@ public class PropertiesUtil {
 	 * name branch for modules
 	 * 
 	 * @param locationFile
+	 *            of your property file
 	 * @param modulesBranchNameMap
+	 *            related your git branch
 	 * @throws IOException
+	 *             if the conf file is not read
 	 */
 	public static void getbranchesName(String locationFile, Map<String, String> modulesBranchNameMap)
 			throws IOException {
@@ -145,10 +152,15 @@ public class PropertiesUtil {
 	 * set fixed properties on POM
 	 * 
 	 * @param locationModule
+	 *            of your project
 	 * @param prop
+	 *            for your pom.xml
 	 * @param parentArtifactIdName
+	 *            of your parent pom.xml
 	 * @param parentVersionValue
+	 *            of your parent pom.xml
 	 * @throws Exception
+	 *             for any problems
 	 */
 	public static void setPropertiesOnPom(String locationModule, Properties prop, String parentArtifactIdName,
 			String parentVersionValue) throws Exception {
@@ -239,7 +251,7 @@ public class PropertiesUtil {
 
 			// commit this change on develop
 			repo.add().addFilepattern("pom.xml").call();
-			repo.commit().setAuthor("oneleo-gitflow-plugin", "gitflow@example.com")
+			repo.commit().setAuthor("github-plugin", "github@example.com")
 					.setMessage(" update properties with properties-set goal").call();
 
 		}
@@ -250,10 +262,15 @@ public class PropertiesUtil {
 	 * check properties commented in pom.xml
 	 * 
 	 * @param document
+	 *            of your pom.xml
 	 * @param tagName
+	 *            of your pom.xml
 	 * @throws ParserConfigurationException
+	 *             if pom.xml is not parsed
 	 * @throws SAXException
+	 *             for pom.xml
 	 * @throws IOException
+	 *             for pom.xml
 	 */
 	private static boolean isCommentedTag(org.w3c.dom.Document document, String tagName) {
 
@@ -271,7 +288,9 @@ public class PropertiesUtil {
 	 * get parent properties from file
 	 * 
 	 * @param prop
+	 *            of your pom.xml
 	 * @param parentPropValues
+	 *            of your parent pom.xml
 	 */
 	public static void getParentProperty(Properties prop, Map<String, String> parentPropValues) {
 
@@ -296,6 +315,9 @@ public class PropertiesUtil {
 	 * get artifact parent property from map
 	 * 
 	 * @param parentPropValues
+	 *            of your parent pom.xml
+	 * 
+	 * @return String artifact of your parent pom.xml
 	 */
 	public static String getArtifactParentProperty(Map<String, String> parentPropValues) {
 
@@ -307,6 +329,9 @@ public class PropertiesUtil {
 	 * get version parent property from map
 	 * 
 	 * @param parentPropValues
+	 *            of your parent pom.xml
+	 * 
+	 * @return String version of your parent pom.xml
 	 */
 	public static String getVersionParentProperty(Map<String, String> parentPropValues) {
 
