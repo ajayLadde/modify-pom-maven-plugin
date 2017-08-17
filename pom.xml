@@ -19,12 +19,13 @@
 		<maven-scm-publish-plugin.version>1.1</maven-scm-publish-plugin.version>
 		<maven.site.version>3.3</maven.site.version>
 		<maven.compiler.version>3.6.1</maven.compiler.version>
+		<scm.project>scm:git:https://github.com/amanganiello90/manage-pom-maven-plugin.git</scm.project>
 	</properties>
 
 
 	<scm>
-		<connection>scm:git:https://github.com/amanganiello90/manage-pom-maven-plugin.git</connection>
-		<developerConnection>scm:git:https://github.com/amanganiello90/manage-pom-maven-plugin.git</developerConnection>
+		<connection>${scm.project}</connection>
+		<developerConnection>${scm.project}</developerConnection>
 		<url>https://github.com/amanganiello90/manage-pom-maven-plugin.git</url>
 		<tag>HEAD</tag>
 	</scm>
@@ -42,7 +43,7 @@
 	<distributionManagement>
 		<site>
 			<id>github</id>
-			<url>scm:git:https://github.com/amanganiello90/manage-pom-maven-plugin.git</url>
+			<url>${scm.project}</url>
 		</site>
 	</distributionManagement>
 
@@ -59,6 +60,9 @@
 			<id>amanganiello90</id>
 			<name>Angelo Manganiello</name>
 			<email>angelo.mang@libero.it</email>
+			<roles>
+				<role>Owner</role>
+			</roles>
 		</developer>
 		<developer>
 			<name>Contributors</name>
@@ -209,7 +213,7 @@
 				<executions>
 					<execution>
 						<id>scm-publish</id>
-						<phase>site-deploy</phase><!-- deploy site with maven-scm-publish-plugin -->
+						<phase>site</phase><!-- deploy site with maven-scm-publish-plugin -->
 						<goals>
 							<goal>publish-scm</goal>
 						</goals>
