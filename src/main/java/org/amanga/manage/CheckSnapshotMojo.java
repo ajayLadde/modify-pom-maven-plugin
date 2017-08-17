@@ -1,5 +1,7 @@
 package org.amanga.manage;
 
+import org.amanga.managecore.ReadPoms;
+
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
  *
@@ -22,10 +24,10 @@ import org.apache.maven.plugins.annotations.Parameter;
 /**
  * check if you have SNAPSHOT dependencies in your maven project.
  * 
- * @author amanganiello
+ * @author amanganiello90
  * 
  */
-@Mojo(requiresProject = false, name = "check-snapshots")
+@Mojo(requiresProject = true, name = "check-snapshots")
 public class CheckSnapshotMojo extends ManageAbstractMojo {
 
 	/**
@@ -34,9 +36,26 @@ public class CheckSnapshotMojo extends ManageAbstractMojo {
 	@Parameter(property = "property")
 	private String property;
 
+	/**
+	 * typology property
+	 */
+	@Parameter(property = "typology")
+	private String typology;
+
 	public void execute() throws MojoExecutionException {
 
-		return;
+		try {
+
+			this.initialize();
+
+			ReadPoms.checkSnapshots(dir, typology);
+
+			return;
+
+		} catch (Exception e) {
+
+			throw new MojoExecutionException("Error", e);
+		}
 
 	}
 

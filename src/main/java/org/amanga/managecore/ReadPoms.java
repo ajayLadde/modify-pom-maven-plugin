@@ -17,7 +17,7 @@ import org.xml.sax.SAXException;
  *
  * class for check SNAPSHOT dependency on pom.xml
  * 
- * @author amanganiello
+ * @author amanganiello90
  */
 public class ReadPoms {
 

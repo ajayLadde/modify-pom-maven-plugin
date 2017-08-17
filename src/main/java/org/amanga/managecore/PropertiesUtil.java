@@ -31,9 +31,17 @@ import org.xml.sax.SAXException;
  *
  * class to manipulate properties file
  * 
- * @author amanganiello
+ * @author amanganiello90
  */
 public class PropertiesUtil {
+
+	private static final String PARENT = "parent";
+	private static final String VERSION = "version";
+	private static final String PROPERTIES = "properties";
+	private static final String PARENT_ARTIFACT = "parentArtifact";
+	private static final String PARENT_VERSION = "parentVersion";
+	private static final String ARTIFACTID = "artifactId";
+	private static final String PARENT_TOKEN = ".PARENT";
 
 	/**
 	 * Constructor
@@ -178,19 +186,19 @@ public class PropertiesUtil {
 		// set parent to new version (if exist)
 
 		// get the parent artifactId
-		int exist = document.getElementsByTagName("parent").getLength();
+		int exist = document.getElementsByTagName(PARENT).getLength();
 
 		if (exist == 1) {
 
-			Node node = document.getElementsByTagName("parent").item(0);
+			Node node = document.getElementsByTagName(PARENT).item(0);
 
 			NodeList children = node.getChildNodes();
 			for (int i = 0; i < children.getLength(); i++) {
 				String nodeName = children.item(i).getNodeName();
-				if (("artifactId").equals(nodeName) && children.item(i).getTextContent().equals(parentArtifactIdName)) {
+				if ((ARTIFACTID).equals(nodeName) && children.item(i).getTextContent().equals(parentArtifactIdName)) {
 					for (int j = 0; j < children.getLength(); j++) {
 						String nodeNameMatched = children.item(j).getNodeName();
-						if (("version").equals(nodeNameMatched)) {
+						if ((VERSION).equals(nodeNameMatched)) {
 
 							if (parentVersionValue != null) {
 								if (!(children.item(j).getTextContent().equals(parentVersionValue))) {
@@ -211,10 +219,10 @@ public class PropertiesUtil {
 		}
 
 		// set properties
-		exist = document.getElementsByTagName("properties").getLength();
+		exist = document.getElementsByTagName(PROPERTIES).getLength();
 		if (exist == 1) {
 
-			Node node = document.getElementsByTagName("properties").item(0);
+			Node node = document.getElementsByTagName(PROPERTIES).item(0);
 			NodeList children = node.getChildNodes();
 
 			int numberChildren = children.getLength();
@@ -251,8 +259,8 @@ public class PropertiesUtil {
 
 			// commit this change on develop
 			repo.add().addFilepattern("pom.xml").call();
-			repo.commit().setAuthor("github-plugin", "github@example.com")
-					.setMessage(" update properties with properties-set goal").call();
+			repo.commit().setAuthor("manage-pom-maven-plugin", "github@example.com")
+					.setMessage("update properties with properties-set goal").call();
 
 		}
 
@@ -301,10 +309,10 @@ public class PropertiesUtil {
 			String currentKey = key.toString();
 			// convention is <artifactId>.PARENT
 
-			if (currentKey.contains(".PARENT")) {
-				String split[] = currentKey.split("\\.PARENT");
-				parentPropValues.put("parentArtifact", split[0]);
-				parentPropValues.put("parentVersion", prop.get(key).toString());
+			if (currentKey.contains(PARENT_TOKEN)) {
+				String split[] = currentKey.split("\\" + PARENT_TOKEN);
+				parentPropValues.put(PARENT_ARTIFACT, split[0]);
+				parentPropValues.put(PARENT_VERSION, prop.get(key).toString());
 			}
 
 		}
@@ -321,7 +329,7 @@ public class PropertiesUtil {
 	 */
 	public static String getArtifactParentProperty(Map<String, String> parentPropValues) {
 
-		return parentPropValues.get("parentArtifact");
+		return parentPropValues.get(PARENT_ARTIFACT);
 
 	}
 
@@ -335,7 +343,7 @@ public class PropertiesUtil {
 	 */
 	public static String getVersionParentProperty(Map<String, String> parentPropValues) {
 
-		return parentPropValues.get("parentVersion");
+		return parentPropValues.get(PARENT_VERSION);
 
 	}
 
