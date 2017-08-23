@@ -22,7 +22,7 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
 /**
- * check if you have SNAPSHOT dependencies in your maven project.
+ * check if you have SNAPSHOT dependencies in your maven multi module project.
  * 
  * @author amanganiello90
  * 
@@ -32,12 +32,12 @@ public class CheckSnapshotMojo extends ManageAbstractMojo {
 
 	/**
 	 * generic property
-	 */
+	 *//*
 	@Parameter(property = "property")
-	private String property;
+	private String property;*/
 
 	/**
-	 * typology property
+	 * typology property. The values are: all, dependency or parent.
 	 */
 	@Parameter(property = "typology")
 	private String typology;
@@ -46,9 +46,7 @@ public class CheckSnapshotMojo extends ManageAbstractMojo {
 
 		try {
 
-			this.initialize();
-
-			ReadPoms.checkSnapshots(dir, typology);
+			ReadPoms.checkSnapshots(dir, typology, testPom);
 
 			return;
 

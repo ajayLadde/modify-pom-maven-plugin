@@ -33,6 +33,7 @@
       <item name="Goals" href="plugin-info.html"/>
       <item name="Examples" href="examples.html"/>
       <item name="Changelog" href="changelog.html"/>
+      <item name="Release-notes" href="release-notes.html"/>
     </menu>
     <menu ref="reports" />
 

@@ -1,6 +1,5 @@
 package org.amanga.manage;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -24,9 +23,6 @@ import org.amanga.managecore.PropertiesUtil;
 
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
-import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.api.errors.RefAlreadyExistsException;
-import org.eclipse.jgit.api.errors.RefNotFoundException;
 
 /**
  * Set parent pom and eventual properties to specified value from a properties
@@ -41,7 +37,7 @@ public class PropertiesSetMojo extends ManageAbstractMojo {
 	public void execute() throws MojoExecutionException {
 
 		try {
-			
+
 			this.initialize();
 
 			Map<String, String> parentPropValues = new HashMap<String, String>();
@@ -54,28 +50,9 @@ public class PropertiesSetMojo extends ManageAbstractMojo {
 			String parentArtifactProp = PropertiesUtil.getArtifactParentProperty(parentPropValues);
 			String parentVersionProp = PropertiesUtil.getVersionParentProperty(parentPropValues);
 
-			logger.info("----------------CHECK ON '" + gitBranch + "' BRANCH TYPE----------------");
-
-			try {
-
-				Git.open(new File(dir)).checkout().setName(gitBranch).setStartPoint("origin/" + gitBranch)
-						.setCreateBranch(true).call();
-
-			} catch (RefNotFoundException e) {
-
-				logger.error("********* You don't have a '" + gitBranch + "' branch for your maven project!");
-				throw new Exception("You don't have a valid " + gitBranch + " branch!");
-
-			} catch (RefAlreadyExistsException e) {
-
-				// branch already exist
-				Git.open(new File(dir)).checkout().setName(gitBranch).call();
-
-			}
-
 			// update properties
 
-			PropertiesUtil.setPropertiesOnPom(dir, prop, parentArtifactProp, parentVersionProp);
+			PropertiesUtil.setPropertiesOnPom(dir, prop, parentArtifactProp, parentVersionProp, gitCommit);
 
 			return;
 

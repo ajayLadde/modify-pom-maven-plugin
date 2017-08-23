@@ -8,4 +8,12 @@
 
 This is a maven plugin implemented ad hoc to manage pom versions and properties.
 
-IN DEVELOPMENT
+### News ###
+
+August 23,2017  | **Release 1.0** | available from  **[MAVEN CENTRAL REPO](http://search.maven.org/#artifactdetails%7Corg.amanga%7Cmanage-pom-maven-plugin%7C1.0%7Cmaven-plugin)**  |
+---- | ---- | ---- |
+
+* First release with only check-snapshots goal tested.
+
+
+

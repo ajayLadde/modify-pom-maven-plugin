@@ -11,6 +11,6 @@ env:
 
 deploy:
   provider: script
-  script: "mvn deploy"
+  script: "mvn deploy site"
   skip_cleanup: true
   tags: true

@@ -4,7 +4,7 @@
 
 	<groupId>org.amanga</groupId>
 	<artifactId>manage-pom-maven-plugin</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>maven-plugin</packaging>
 	<description>This is a maven plugin implemented ad hoc to manage pom versions and properties</description>
 	<name>MAVEN-MANAGE-POM::Plugin - ${project.version}</name>

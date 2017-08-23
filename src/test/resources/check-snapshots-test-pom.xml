@@ -13,6 +13,7 @@
 				<groupId>org.amanga.manage</groupId>
 				<artifactId>manage-pom-maven-plugin</artifactId>
 				<configuration>
+				<typology>all</typology>
 				</configuration>
 			</plugin>
 		</plugins>

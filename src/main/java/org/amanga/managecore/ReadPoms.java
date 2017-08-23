@@ -51,7 +51,7 @@ public class ReadPoms {
 	 * @throws IOException
 	 *             for pom.xml
 	 */
-	public static String checkSnapshots(String directory, String typology)
+	public static String checkSnapshots(String directory, String typology, String testPom)
 			throws ParserConfigurationException, SAXException, IOException {
 
 		if (!((ALL).equals(typology) || (PARENT).equals(typology) || (DEPENDENCIES).equals(typology))) {
@@ -60,6 +60,9 @@ public class ReadPoms {
 		}
 
 		String pomName = directory + "/pom.xml";
+		if (testPom != null) {
+			pomName = directory + testPom;
+		}
 
 		// Reading your main pom
 		File pomFile = new File(pomName);

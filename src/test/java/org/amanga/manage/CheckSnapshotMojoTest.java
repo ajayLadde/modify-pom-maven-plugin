@@ -12,7 +12,7 @@ import org.junit.Test;
 /*
  * This class contains test scenarios for check-snapshots goal
  */
-public class CheckSnapshotMojoTest  extends ManageAbstractMojoTest{
+public class CheckSnapshotMojoTest extends ManageAbstractMojoTest {
 
 	protected static final String GOAL = "check-snapshots";
 
@@ -33,7 +33,7 @@ public class CheckSnapshotMojoTest  extends ManageAbstractMojoTest{
 
 	@Test
 	public void testCheckSnapshotsGoal() throws Exception {
-		
+
 		ClassLoader classLoader = getClass().getClassLoader();
 		File pom = new File(classLoader.getResource("check-snapshots-test-pom.xml").getFile());
 		Assert.assertNotNull(pom);
@@ -41,6 +41,8 @@ public class CheckSnapshotMojoTest  extends ManageAbstractMojoTest{
 
 		CheckSnapshotMojo checkSnapshotMojo = (CheckSnapshotMojo) this.rule.lookupMojo(GOAL, pom);
 		Assert.assertNotNull(checkSnapshotMojo);
+		checkSnapshotMojo.setTestPom("/src/test/resources/check-snapshots-test-pom.xml");
+		checkSnapshotMojo.execute();
 
 	}
 
