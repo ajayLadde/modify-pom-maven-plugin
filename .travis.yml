@@ -9,8 +9,6 @@ env:
   global:
   - MAVEN_HOME=/usr/local/maven-3.3.9
 
-deploy:
-  provider: script
-  script: "mvn deploy site"
-  skip_cleanup: true
-  tags: true
+before_install: "cp ./keys/pubring.gpg $HOME/.gnupg/pubring.gpg && cp ./keys/secring.gpg $HOME/.gnupg/secring.gpg && cp ./keys/trustdb.gpg $HOME/.gnupg/trustdb.gpg "
+
+script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn deploy -DskipTests && mvn site"

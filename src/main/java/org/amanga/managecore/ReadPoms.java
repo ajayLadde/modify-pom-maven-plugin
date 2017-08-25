@@ -43,6 +43,8 @@ public class ReadPoms {
 	 *            of your project
 	 * @param typology:
 	 *            all, parent or dependencies
+	 * @param testPom:
+	 *            name of test pom	
 	 * @return null if there aren't SNAPSHOTS
 	 * @throws ParserConfigurationException
 	 *             if pom.xml is not parsed

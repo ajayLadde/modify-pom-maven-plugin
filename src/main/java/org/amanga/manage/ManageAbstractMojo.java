@@ -86,7 +86,9 @@ public abstract class ManageAbstractMojo extends AbstractMojo {
 
 	/**
 	 * method to set pom name for junit test
-	 * 
+	 *
+	 * @param testPom:
+	 *            name of test pom	
 	 */
 	protected void setTestPom(String pomName) {
 		this.testPom = pomName;

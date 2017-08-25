@@ -11,6 +11,7 @@
 	<url>https://github.com/amanganiello90/manage-pom-maven-plugin</url>
 
 	<properties>
+		<deploy.repo.id>sonatype-server</deploy.repo.id>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven-plugin-plugin.version>3.3</maven-plugin-plugin.version>
@@ -19,6 +20,8 @@
 		<maven-scm-publish-plugin.version>1.1</maven-scm-publish-plugin.version>
 		<maven.site.version>3.3</maven.site.version>
 		<maven.compiler.version>3.6.1</maven.compiler.version>
+		<maven.source.plugin.version>3.0.1</maven.source.plugin.version>
+		<maven.nexus.staging.plugin.version>1.5.1</maven.nexus.staging.plugin.version>
 		<scm.project>scm:git:https://github.com/amanganiello90/manage-pom-maven-plugin.git</scm.project>
 	</properties>
 
@@ -45,6 +48,14 @@
 			<id>github</id>
 			<url>${scm.project}</url>
 		</site>
+		<snapshotRepository>
+			<id>${deploy.repo.id}</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>${deploy.repo.id}</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
 	</distributionManagement>
 
 
@@ -233,6 +244,51 @@
 						<id>attach-javadocs</id>
 						<goals>
 							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<!-- to deploy artifacts -->
+
+			<plugin>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<passphrase>${env.PASSPH}</passphrase>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>${maven.nexus.staging.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>${deploy.repo.id}</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<stagingProfileId />
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven.source.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
 						</goals>
 					</execution>
 				</executions>
