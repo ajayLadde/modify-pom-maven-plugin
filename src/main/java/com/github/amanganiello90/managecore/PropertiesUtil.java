@@ -1,4 +1,4 @@
-package org.amanga.managecore;
+package com.github.amanganiello90.managecore;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,10 +1,8 @@
-package org.amanga.manage;
+package com.github.amanganiello90.manage;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-
-import org.amanga.managecore.PropertiesUtil;
 
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
@@ -23,6 +21,8 @@ import org.amanga.managecore.PropertiesUtil;
 
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
+
+import com.github.amanganiello90.managecore.PropertiesUtil;
 
 /**
  * Set parent pom and eventual properties to specified value from a properties

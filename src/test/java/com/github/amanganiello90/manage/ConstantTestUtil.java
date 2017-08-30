@@ -1,4 +1,4 @@
-package org.amanga.manage;
+package com.github.amanganiello90.manage;
 
 public interface ConstantTestUtil {
 

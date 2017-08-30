@@ -1,6 +1,4 @@
-package org.amanga.manage;
-
-import org.amanga.managecore.ReadPoms;
+package com.github.amanganiello90.manage;
 
 /*
  * Copyright 2001-2005 The Apache Software Foundation.
@@ -20,6 +18,8 @@ import org.amanga.managecore.ReadPoms;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
+
+import com.github.amanganiello90.managecore.ReadPoms;
 
 /**
  * check if you have SNAPSHOT dependencies in your maven multi module project.
