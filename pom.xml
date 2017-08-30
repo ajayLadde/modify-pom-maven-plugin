@@ -220,6 +220,8 @@
 					<pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
 					<scmBranch>gh-pages</scmBranch>
 					<content>${project.reporting.outputDirectory}</content>
+					<username>${env.USERDOC}</username>
+					<password>${env.PASSDOC}</password>
 				</configuration>
 				<executions>
 					<execution>
@@ -258,7 +260,7 @@
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>
-						<phase>verify</phase>
+						<phase>deploy</phase>
 						<goals>
 							<goal>sign</goal>
 						</goals>
@@ -286,7 +288,7 @@
 				<executions>
 					<execution>
 						<id>attach-sources</id>
-						<phase>verify</phase>
+						<phase>package</phase>
 						<goals>
 							<goal>jar-no-fork</goal>
 						</goals>
