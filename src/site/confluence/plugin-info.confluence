@@ -1,0 +1,4 @@
+h1. Goals
+
+||Goal || Description ||
+| *check-snapshots* | Run an exception if you have SNAPSHOT dependencies. It haven't input parameters. |

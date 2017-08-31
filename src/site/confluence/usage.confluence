@@ -1,0 +1,91 @@
+h1. Usage
+
+
+h2. Run the plugin on demand
+
+Declare in your maven project:
+
+{code:xml}
+<project>
+  ...
+  <build>
+
+    <!-- To use the plugin goals in your POM or parent POM -->
+    <plugins>
+      <plugin>
+        <groupId>com.github.amanganiello90</groupId>
+        <artifactId>manage-pom-maven-plugin</artifactId>
+        <version>1.0<version>
+      </plugin>
+      ...
+    </plugins>
+  </build>
+  ...
+</project>
+{code}
+
+Or modify adding in your *maven settings.xml* :
+
+{code:xml}
+...
+<pluginGroups>        
+        <pluginGroup>com.github.amanganiello90</pluginGroup>
+</pluginGroups>
+...
+{code}
+
+{warning}
+With the pluginGroups configuration you use the last release version available on maven central.
+{warning}
+
+
+Now you can run the plugin with:
+
+{code:bash}
+mvn manage-pom:<goal>
+{code}
+
+Where <goal> is a specified plugin goal, for example:
+
+{code:bash}
+mvn manage-pom:check-snapshots
+{code}
+
+
+
+h2. Run the plugin in a maven phase
+
+If you want to automatically run a specified plugin goal (for example the check-snapshots) in a maven phase (i. e. package phase), declare in your maven project:
+
+{code:xml}
+<project>
+  ...
+  <build>
+
+    <!-- To use the plugin goals in your POM or parent POM -->
+    <plugins>
+      <plugin>
+        <groupId>com.github.amanganiello90</groupId>
+        <artifactId>manage-pom-maven-plugin</artifactId>
+        <version>1.0<version>
+        <executions>
+			<execution>
+			  <id>default-deploy</id>
+			  <phase>package</phase>
+			  <goals>
+				<goal>check-snapshots</goal>
+			  </goals>
+			</execution>
+	</executions>
+       <configuration>
+          ...
+       </configuration>
+      </plugin>
+      ...
+    </plugins>
+  </build>
+  ...
+</project>
+{code}
+
+For more informations, see ["Guide to Configuring Plug-ins"|http://maven.apache.org/guides/mini/guide-configuring-plugins.html].
