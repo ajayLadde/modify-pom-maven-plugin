@@ -1,4 +1,4 @@
 h1. Goals
 
 ||Goal || Description ||
-| *check-snapshots* | Run an exception if you have SNAPSHOT dependencies. It haven't input parameters. |
+| *check-snapshots* | Run an exception if you have SNAPSHOT dependencies in your maven multi module project (controls also the submodules). It hasn't input parameters. |

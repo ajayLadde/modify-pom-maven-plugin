@@ -70,7 +70,7 @@ If you want to automatically run a specified plugin goal (for example the check-
         <version>1.0<version>
         <executions>
 			<execution>
-			  <id>default-deploy</id>
+			  <id>check-snapshot-package-phase</id>
 			  <phase>package</phase>
 			  <goals>
 				<goal>check-snapshots</goal>
