@@ -1,0 +1,4 @@
+h1. Introduction
+
+This is a plugin that manages your pom(s).xml.
+The only goal available, the *check-snapshots*, run an exception if you have SNAPSHOT dependencies.
