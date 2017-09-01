@@ -7,6 +7,7 @@
 
 
 This is a maven plugin implemented ad hoc to manage pom versions and properties.
+It is a github reference maven plugin automatized with **travis continuous integration, deploy on maven central, publish site and JUnit tests for plugins**.
 
 * build information
 
