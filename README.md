@@ -24,5 +24,6 @@ August 31,2017  | **Release 1.0** | available from  **[MAVEN CENTRAL REPO](http:
 
 * First release with only check-snapshots goal tested.
 
+* For the next release 1.1, the name of plugin will be changed in **modify-pom-maven-plugin**.
 
 
