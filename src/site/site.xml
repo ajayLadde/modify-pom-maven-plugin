@@ -18,7 +18,7 @@
         <sitesearch/>
       </googleSearch>
       <gitHub>
-        <projectId>amanganiello90/manage-pom-maven-plugin</projectId>
+        <projectId>amanganiello90/modify-pom-maven-plugin</projectId>
         <ribbonOrientation>right</ribbonOrientation>
         <ribbonColor>orange</ribbonColor>
       </gitHub>

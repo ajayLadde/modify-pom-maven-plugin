@@ -11,7 +11,7 @@
 		<plugins>
 			<plugin>
 				<groupId>com.github.amanganiello90</groupId>
-				<artifactId>manage-pom-maven-plugin</artifactId>
+				<artifactId>modify-pom-maven-plugin</artifactId>
 				<configuration>
 				<typology>all</typology>
 				</configuration>

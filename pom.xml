@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.amanganiello90</groupId>
-	<artifactId>manage-pom-maven-plugin</artifactId>
+	<artifactId>modify-pom-maven-plugin</artifactId>
 	<version>1.1-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 	<description>This is a maven plugin implemented ad hoc to manage pom versions and properties</description>
 	<name>MAVEN-MANAGE-POM::Plugin - ${project.version}</name>
-	<url>https://github.com/amanganiello90/manage-pom-maven-plugin</url>
+	<url>https://github.com/amanganiello90/modify-pom-maven-plugin</url>
 
 	<properties>
 		<deploy.repo.id>sonatype-server</deploy.repo.id>
@@ -22,7 +22,7 @@
 		<maven.compiler.version>3.6.1</maven.compiler.version>
 		<maven.source.plugin.version>3.0.1</maven.source.plugin.version>
 		<maven.nexus.staging.plugin.version>1.5.1</maven.nexus.staging.plugin.version>
-		<scm.project>scm:git:https://github.com/amanganiello90/manage-pom-maven-plugin.git</scm.project>
+		<scm.project>scm:git:https://github.com/amanganiello90/modify-pom-maven-plugin.git</scm.project>
 		<maven.deploy.version>2.8.2</maven.deploy.version>
 		<maven.compat.version>3.3.9</maven.compat.version>
 		<sl4j.version>1.7.21</sl4j.version>
@@ -34,18 +34,18 @@
 	<scm>
 		<connection>${scm.project}</connection>
 		<developerConnection>${scm.project}</developerConnection>
-		<url>https://github.com/amanganiello90/manage-pom-maven-plugin.git</url>
+		<url>https://github.com/amanganiello90/modify-pom-maven-plugin.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issue Tracking</system>
-		<url>https://github.com/amanganiello90/manage-pom-maven-plugin/issues</url>
+		<url>https://github.com/amanganiello90/modify-pom-maven-plugin/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>Travis</system>
-		<url>https://travis-ci.org/amanganiello90/manage-pom-maven-plugin</url>
+		<url>https://travis-ci.org/amanganiello90/modify-pom-maven-plugin</url>
 	</ciManagement>
 
 	<distributionManagement>
@@ -83,7 +83,7 @@
 		<developer>
 			<name>Contributors</name>
 			<id>contributors</id>
-			<url>https://github.com/amanganiello90/manage-pom-maven-plugin/graphs/contributors</url>
+			<url>https://github.com/amanganiello90/modify-pom-maven-plugin/graphs/contributors</url>
 			<roles>
 				<role>Developer</role>
 				<role>Contributor</role>
@@ -249,7 +249,7 @@
 				<artifactId>maven-plugin-plugin</artifactId>
 				<version>${maven-plugin-plugin.version}</version>
 				<configuration>
-					<goalPrefix>manage-pom</goalPrefix>
+					<goalPrefix>modify-pom</goalPrefix>
 					<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
 				</configuration>
 				<executions>

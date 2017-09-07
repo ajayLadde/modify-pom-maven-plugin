@@ -31,15 +31,9 @@ import com.github.amanganiello90.managecore.ReadPoms;
 public class CheckSnapshotMojo extends ManageAbstractMojo {
 
 	/**
-	 * generic property
-	 *//*
-	@Parameter(property = "property")
-	private String property;*/
-
-	/**
 	 * typology property. The values are: all, dependency or parent.
 	 */
-	@Parameter(property = "typology")
+	@Parameter(property = "typology", defaultValue = "all")
 	private String typology;
 
 	public void execute() throws MojoExecutionException {

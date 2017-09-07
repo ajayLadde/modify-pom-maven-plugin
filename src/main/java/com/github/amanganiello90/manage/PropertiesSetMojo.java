@@ -21,8 +21,10 @@ import java.util.Properties;
 
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 
 import com.github.amanganiello90.managecore.PropertiesUtil;
+import com.github.amanganiello90.managecore.Property;
 
 /**
  * Set parent pom and eventual properties to specified value from a properties
@@ -33,6 +35,12 @@ import com.github.amanganiello90.managecore.PropertiesUtil;
  */
 @Mojo(requiresProject = true, name = "properties-set")
 public class PropertiesSetMojo extends ManageAbstractMojo {
+
+	/**
+	 * Update properties passed with a specific version
+	 */
+	@Parameter
+	private Property[] properties;
 
 	public void execute() throws MojoExecutionException {
 
