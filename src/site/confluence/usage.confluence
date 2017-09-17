@@ -15,7 +15,7 @@ Declare in your maven project:
       <plugin>
         <groupId>com.github.amanganiello90</groupId>
         <artifactId>modify-pom-maven-plugin</artifactId>
-        <version>1.0<version>
+        <version>1.0.1<version>
       </plugin>
       ...
     </plugins>
@@ -67,7 +67,7 @@ If you want to automatically run a specified plugin goal (for example the check-
       <plugin>
         <groupId>com.github.amanganiello90</groupId>
         <artifactId>modify-pom-maven-plugin</artifactId>
-        <version>1.0<version>
+        <version>1.0.1<version>
         <executions>
 			<execution>
 			  <id>check-snapshot-package-phase</id>
