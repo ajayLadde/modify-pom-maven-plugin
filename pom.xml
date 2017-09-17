@@ -4,7 +4,7 @@
 
 	<groupId>com.github.amanganiello90</groupId>
 	<artifactId>modify-pom-maven-plugin</artifactId>
-	<version>1.0.1</version>
+	<version>1.1-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 	<description>This is a maven plugin implemented ad hoc to manage pom versions and properties</description>
 	<name>MAVEN-MANAGE-POM::Plugin - ${project.version}</name>
