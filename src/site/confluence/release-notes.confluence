@@ -1,6 +1,5 @@
 h1. Release notes
 
-
-h2. 1.0 release
-
-First release version with only the goal *check-snapshots*.
+h2. 1.0.1 version
+The The same of 1.0 but with name modify from **manage-pom-maven-plugin to modify-pom-maven-plugin** and improvements for code quality.
+Some classes added for the next release to use the future property set goal.

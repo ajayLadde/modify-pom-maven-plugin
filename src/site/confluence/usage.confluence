@@ -14,8 +14,8 @@ Declare in your maven project:
     <plugins>
       <plugin>
         <groupId>com.github.amanganiello90</groupId>
-        <artifactId>manage-pom-maven-plugin</artifactId>
-        <version>1.0<version>
+        <artifactId>modify-pom-maven-plugin</artifactId>
+        <version>1.0.1<version>
       </plugin>
       ...
     </plugins>
@@ -42,7 +42,7 @@ With the pluginGroups configuration you use the last release version available o
 Now you can run the plugin with:
 
 {code:bash}
-mvn manage-pom:<goal>
+mvn modify-pom:<goal>
 {code}
 
 Where <goal> is a specified plugin goal, for example:
@@ -66,11 +66,11 @@ If you want to automatically run a specified plugin goal (for example the check-
     <plugins>
       <plugin>
         <groupId>com.github.amanganiello90</groupId>
-        <artifactId>manage-pom-maven-plugin</artifactId>
-        <version>1.0<version>
+        <artifactId>modify-pom-maven-plugin</artifactId>
+        <version>1.0.1<version>
         <executions>
 			<execution>
-			  <id>default-deploy</id>
+			  <id>check-snapshot-package-phase</id>
 			  <phase>package</phase>
 			  <goals>
 				<goal>check-snapshots</goal>
