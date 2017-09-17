@@ -23,7 +23,9 @@ The maven deploy is run only on the master branch with the _.travis-deploy-maven
 
 ### News ###
 
-September 17,2017  | **Release 1.0.1** | available from  **[MAVEN CENTRAL REPO](http://search.maven.org/#artifactdetails%7Ccom.github.amanganiello90%7Cmodify-pom-maven-plugin%7C1.0.1%7Cmaven-plugin)**  |
+* Development 1.1-SNAPSHOT version with properties-set goal
+
+September 17,2017  | **Hotfix 1.0.1** | available from  **[MAVEN CENTRAL REPO](http://search.maven.org/#artifactdetails%7Ccom.github.amanganiello90%7Cmodify-pom-maven-plugin%7C1.0.1%7Cmaven-plugin)**  |
 ---- | ---- | ---- |
 
 * The same of 1.0 but with name modify from **manage-pom-maven-plugin to modify-pom-maven-plugin** and improvements for code quality. Some classes added for the next release to use the future property set goal.
